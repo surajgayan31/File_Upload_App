@@ -10,7 +10,7 @@ import {
 import * as WebBrowser from "expo-web-browser";
 import { UploadedFile } from "../../utils/uploadFileToSupabase";
 import { Image } from "expo-image";
-import FastImage from "react-native-fast-image";
+
 import { LinearGradient } from "expo-linear-gradient";
 import { createShimmerPlaceholder } from "react-native-shimmer-placeholder";
 import { color, fontSize } from "../../styles/styles";
@@ -60,7 +60,7 @@ export default function UploadedFileList({
           {/* Thumbnail */}
           {item.isImage ? (
             <TouchableOpacity onPress={() => setPreviewImageUrl(item.url)}>
-              <FastImage source={{ uri: item.url }} style={styles.thumb} />
+              <Image source={{ uri: item.url }} style={styles.thumb} />
             </TouchableOpacity>
           ) : (
             <View style={styles.iconWrapper}>
